@@ -9,7 +9,25 @@
 .animate-blink {
   animation: blink 1.5s infinite ease-in-out;
 }
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px; /* full circle */
+  background: #444; /* faded black */
+  cursor: pointer;
+  border: 2px solid #ccc;
+  margin-top: -6px; /* align vertically */
+}
 
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  background: #444;
+  cursor: pointer;
+  border: 2px solid #ccc;
+}
 
 
 

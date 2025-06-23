@@ -21,7 +21,7 @@ export default function Hero() {
           <p className="text-[#555] text-sm sm:text-base md:text-lg mb-6 md:mb-8 max-w-md font-light leading-relaxed mx-auto md:mx-0">
             I&rsquo;m a Software Developer with a strong background in Accounting & Finance
           </p>
-          <button className="bg-[#333] rounded-sm text-white text-xs tracking-[0.3em] px-6 sm:px-8 py-3 sm:py-4 font-medium hover:bg-gray-800 transition uppercase">
+          <button className="bg-[#333] rounded-sm text-white text-xs tracking-[0.3em] px-6 sm:px-8 py-3 sm:py-4 font-medium hover:bg-black transition uppercase">
             MY WORK
           </button>
         </div>

@@ -1,4 +1,6 @@
+import About from "./components/About";
 import Hero from "./components/Hero";
+import Myexperiance from "./components/Myexperiance";
 import Navbar from "./components/Navbar";
 import Preloader from "./components/placeloader";
 
@@ -8,6 +10,8 @@ export default function HomePage() {
     <Preloader />
      <Navbar />
       <Hero />
+      <About/>
+      <Myexperiance/>
     </main>
   )
 }
