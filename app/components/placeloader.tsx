@@ -30,7 +30,7 @@ export default function Preloader() {
         <span className="relative">
           l
           
-          <span className="absolute -top-[1px] left-1/2 -translate-x-[60%] w-[10px] h-2.5 bg-white animate-blink" />
+          <span className="absolute -top-[1px] left-1/2 -translate-x-[60%] w-[10px] h-2.5 rounded-full bg-white animate-blink" />
         </span>
         raj.
       </h1>
