@@ -1,5 +1,19 @@
 @import "tailwindcss";
 @tailwind utilities;
+ @keyframes strike-expand {
+    0% {
+      width: 0;
+      left: 50%;
+    }
+    100% {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  .animate-strike-expand {
+    animation: strike-expand 0.4s ease-out forwards;
+  }
 
 @keyframes blink {
   0%, 100% { opacity: 0.2; }
