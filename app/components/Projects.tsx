@@ -12,43 +12,43 @@ const items = [
     id: 1,
     title: 'Hospital Management System',
     category: 'Desktop-App',
-    image: '/your-photo.jpg',
+    image: '/desktopinv.png',
   },
   {
     id: 2,
     title: 'Store Inventory App',
     category: 'ERP-Systems',
-    image: '/your-photo.jpg',
+    image: '/desktopinv.png',
   },
   {
     id: 3,
     title: 'University Degree System',
     category: 'WEB',
-    image: '/your-photo.jpg',
+    image: '/036A2528-Photoroom.png',
   },
   {
     id: 4,
     title: 'FinTech UI Design',
     category: 'WEB',
-    image: '/your-photo.jpg',
+    image: '/036A2528-Photoroom.png',
   },
   {
     id: 5,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/your-photo.jpg',
+    image: '/036A2528-Photoroom.png',
   },
   {
     id: 6,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/your-photo.jpg',
+    image: '/036A2528-Photoroom.png',
   },
   {
     id: 7,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/your-photo.jpg',
+    image: '/036A2528-Photoroom.png',
   }
 ];
 
