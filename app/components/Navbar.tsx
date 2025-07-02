@@ -27,7 +27,7 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4">
-        <div className="font-bold text-3xl md:text-4xl text-gray-900">Siraj.</div>
+        <div className="font-bold text-3xl md:text-4xl text-[#333]">Siraj.</div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-4 lg:space-x-6">

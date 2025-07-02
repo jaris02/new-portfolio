@@ -24,31 +24,31 @@ const items = [
     id: 3,
     title: 'University Degree System',
     category: 'WEB',
-    image: '/036A2528-Photoroom.png',
+    image: '/desktopinv.png',
   },
   {
     id: 4,
     title: 'FinTech UI Design',
     category: 'WEB',
-    image: '/036A2528-Photoroom.png',
+    image: '/desktopinv.png',
   },
   {
     id: 5,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/036A2528-Photoroom.png',
+    image: '/desktopinv.png',
   },
   {
     id: 6,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/036A2528-Photoroom.png',
+    image: '/desktopinv.png',
   },
   {
     id: 7,
     title: 'Finance Dashboard',
     category: 'ERP-Systems',
-    image: '/036A2528-Photoroom.png',
+    image: '/desktopinv.png',
   }
 ];
 
