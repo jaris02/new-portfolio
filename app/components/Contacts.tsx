@@ -30,7 +30,7 @@ const ContactSection = () => {
         alert('Something went wrong. Please try again.');
       }
     } catch (error) {
-      alert('Network error.');
+      alert(error+'Network error.');
     } finally {
       setLoading(false);
     }
