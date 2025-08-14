@@ -58,13 +58,28 @@ const items = [
 export default function PortfolioSection() {
   const [selected, setSelected] = useState('ALL');
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(null);
+  interface ProjectItem {
+    id: number;
+    title: string;
+    category: string;
+    images: string[];
+    link?: string;
+  }
+  const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredItems =
     selected === 'ALL' ? items : items.filter((item) => item.category.toUpperCase() === selected);
 
-  const openModal = (project) => {
+  interface ProjectItem {
+    id: number;
+    title: string;
+    category: string;
+    images: string[];
+    link?: string;
+  }
+
+  const openModal = (project: ProjectItem) => {
     setActiveProject(project);
     setCurrentImageIndex(0);
     setModalOpen(true);
