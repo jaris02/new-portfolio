@@ -13,7 +13,7 @@ const items = [
     title: 'Hospital Management System',
     category: 'Desktop-App',
     images: ['/hospital/adduser-admin.png','/hospital/login.png','/hospital/adduser-admin.png', '/hospital/viewuser.png', '/hospital/add-patient.png','/hospital/view-patient.png','/hospital/payment.png','/hospital/diagnose.png','/hospital/additional-diagnose.png','/hospital/viewresult.png'],
-    link: 'https://example.com/hospital-system',
+    
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const items = [
     id: 3,
     title: 'University Degree System',
     category: 'WEB',
-    images: ['/desktopinv.png', '/desktopinv.png'],
+    images: ['/degree/degree0.png','/degree/degree2.png', '/degree/degree3.png', '/degree/degree4.png', '/degree/degree5.png', '/degree/degree6.png', '/degree/degree7.png', '/degree/degree8.png'],
     link: 'https://example.com/degree-system',
   }, {
     id: 4,
@@ -167,73 +167,80 @@ export default function PortfolioSection() {
       </div>
 
       {/* Modal */}
-      {modalOpen && activeProject && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-5xl w-full relative p-6">
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
-            >
-              ✖
-            </button>
+    {/* Modal */}
+{modalOpen && activeProject && (
+  <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-lg w-full max-w-7xl relative p-6 shadow-lg">
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl"
+      >
+        ✖
+      </button>
 
-            <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
+      {/* Title */}
+      <h3 className="text-3xl font-bold mb-6 text-center">{activeProject.title}</h3>
 
-            {/* Image Carousel */}
-            <div className="relative w-full h-[500px] flex items-center justify-center">
-              <Image
-                src={activeProject.images[currentImageIndex]}
-                alt={`Preview ${currentImageIndex + 1}`}
-                fill
-                className="object-cover rounded-md"
-              />
-              {/* Prev Button */}
-              <button
-                onClick={prevImage}
-                className="absolute left-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-              >
-                <FaArrowLeft />
-              </button>
-              {/* Next Button */}
-              <button
-                onClick={nextImage}
-                className="absolute right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
-              >
-                <FaArrowRight />
-              </button>
-            </div>
+      {/* Image Carousel */}
+      <div className="relative w-full h-[70vh] flex items-center justify-center bg-black rounded-lg overflow-hidden">
+        <Image
+          src={activeProject.images[currentImageIndex]}
+          alt={`Preview ${currentImageIndex + 1}`}
+          fill
+          className="object-contain" // Prevents cropping
+        />
 
-            {/* Pagination dots */}
-            <div className="flex justify-center mt-4 space-x-2">
-                {activeProject.images.map((_: string, idx: number) => (
-                <span
-                  key={idx}
-                  onClick={() => setCurrentImageIndex(idx)}
-                  className={`w-3 h-3 rounded-full cursor-pointer ${
-                  currentImageIndex === idx ? 'bg-gray-800' : 'bg-gray-400'
-                  }`}
-                />
-                ))}
-            </div>
+        {/* Prev Button */}
+        <button
+          onClick={prevImage}
+          className="absolute left-4 bg-black/60 text-white p-3 rounded-full hover:bg-black/80 text-xl"
+        >
+          <FaArrowLeft />
+        </button>
 
-            {/* Project Link */}
-            {activeProject.link && (
-              <div className="mt-6 text-center">
-                <a
-                  href={activeProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-                >
-                  Visit Project
-                </a>
-              </div>
-            )}
+        {/* Next Button */}
+        <button
+          onClick={nextImage}
+          className="absolute right-4 bg-black/60 text-white p-3 rounded-full hover:bg-black/80 text-xl"
+        >
+          <FaArrowRight />
+        </button>
+      </div>
 
-            <div className="mt-4 text-gray-700 text-center">{activeProject.category}</div>
-          </div>
+      {/* Pagination dots */}
+      <div className="flex justify-center mt-5 space-x-2">
+        {activeProject.images.map((_, idx) => (
+          <span
+            key={idx}
+            onClick={() => setCurrentImageIndex(idx)}
+            className={`w-3 h-3 rounded-full cursor-pointer transition ${
+              currentImageIndex === idx ? 'bg-blue-600' : 'bg-gray-400 hover:bg-gray-500'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Project Link */}
+      {activeProject.link && (
+        <div className="mt-6 text-center">
+          <a
+            href={activeProject.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-lg"
+          >
+            Visit Project
+          </a>
         </div>
       )}
+
+      {/* Category */}
+      <div className="mt-4 text-gray-600 text-center text-sm">{activeProject.category}</div>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

@@ -1,6 +1,5 @@
 // app/components/Navbar.tsx
 'use client';
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
@@ -11,6 +10,7 @@ export default function Navbar() {
   const [active, setActive] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Navbar shrink on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -18,6 +18,44 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Scroll spy logic
+  useEffect(() => {
+    const sections = navItems.map(item =>
+      document.getElementById(item.toLowerCase())
+    );
+
+    const handleScrollSpy = () => {
+      const scrollY = window.scrollY + window.innerHeight / 3;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollY) {
+          setActive(navItems[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollSpy);
+    handleScrollSpy();
+    return () => window.removeEventListener("scroll", handleScrollSpy);
+  }, []);
+
+  // Smooth scroll function
+ const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    const headerOffset = 80; // height of your navbar
+    const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+};
+
 
   return (
     <header
@@ -32,10 +70,13 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-4 lg:space-x-6">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setActive(item)}
+              onClick={(e) => {
+                e.preventDefault();
+                setActive(item);
+                scrollToSection(item.toLowerCase());
+              }}
               className={clsx(
                 "relative group uppercase text-xs sm:text-sm tracking-wide font-semibold transition-colors duration-300 ease-in-out",
                 active === item ? "text-gray-400" : "text-[#333] hover:text-black"
@@ -48,12 +89,12 @@ export default function Navbar() {
                   active === item && "scale-x-100"
                 )}
               />
-            </Link>
+            </button>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden p-2 focus:outline-none"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
@@ -70,12 +111,13 @@ export default function Navbar() {
         <nav className="md:hidden bg-[#f7f7f7] border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col space-y-3">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setActive(item);
                   setMobileOpen(false);
+                  scrollToSection(item.toLowerCase());
                 }}
                 className={clsx(
                   "py-2 px-3 uppercase text-sm tracking-wide font-semibold transition-colors",
@@ -83,7 +125,7 @@ export default function Navbar() {
                 )}
               >
                 {item}
-              </Link>
+              </button>
             ))}
           </div>
         </nav>
