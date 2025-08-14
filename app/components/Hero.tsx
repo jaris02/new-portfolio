@@ -1,6 +1,7 @@
 // app/components/Hero.tsx
 'use client';
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -22,7 +23,9 @@ export default function Hero() {
             I&rsquo;m a Software Developer with a strong background in Accounting & Finance
           </p>
           <button className="bg-[#333] rounded-sm text-white text-xs tracking-[0.3em] px-6 sm:px-8 py-3 sm:py-4 font-medium hover:bg-black transition uppercase">
+            <Link href="#portfolio">
             MY WORK
+            </Link>
           </button>
         </div>
 

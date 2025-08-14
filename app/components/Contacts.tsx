@@ -45,7 +45,7 @@ const ContactSection = () => {
           <div className="w-10 h-[2px] bg-[#333] mt-2 mb-1"></div>
           <div className="w-20 h-[2px] bg-[#333] mb-6"></div>
           <p className="text-[#333] mb-10 leading-relaxed max-w-md">
-            There are many variations of passages of Lorem Ipsum available, but in some form, by
+           Have a Project in Mind? Let’s Talk!
           </p>
           <div className="space-y-6">
             {[
