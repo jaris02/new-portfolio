@@ -58,7 +58,7 @@ const items = [
 export default function PortfolioSection() {
   const [selected, setSelected] = useState('ALL');
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState<any>(null);
+  const [activeProject, setActiveProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredItems =
