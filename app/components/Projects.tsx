@@ -32,7 +32,7 @@ const items = [
     title: 'Real Estate Company',
     category: 'WEB',
     images: ['/real-state/realstate-landing.jpg', '/real-state/login.jpg', '/real-state/book-tovisit.jpg','/real-state/preview.jpg'],
-    link: 'https://example.com/hospital-system',
+    
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export default function PortfolioSection() {
   const filteredItems =
     selected === 'ALL' ? items : items.filter((item) => item.category.toUpperCase() === selected);
 
-  const openModal = (project: any) => {
+  const openModal = (project) => {
     setActiveProject(project);
     setCurrentImageIndex(0);
     setModalOpen(true);
