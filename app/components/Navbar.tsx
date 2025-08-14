@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-const navItems = ["Home", "About", "Portfolio", "Services", "Blog", "Contact"];
+const navItems = ["Home", "About", "Portfolio", "Services", "Contact"];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

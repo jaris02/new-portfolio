@@ -37,7 +37,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-[#f7f7f7] py-20">
+    <section id="contact" className="bg-[#f7f7f7] py-20">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
         {/* Left Info Section */}
         <div>

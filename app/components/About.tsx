@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+
 type Skill = {
   name: string;
   percentage: number;
@@ -32,7 +33,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="bg-white py-20">
+    <section id="about" className="bg-white py-20" data-aos="zoom-out">
       <div className="max-w-6xl mx-auto px-4 md:px-0 flex flex-col items-center">
         {/* Header */}
         <h2 className="text-3xl font-bold tracking-wide text-center text-[#333] uppercase">
@@ -58,7 +59,13 @@ export default function About() {
             financial decision-making.
           </p><br />
             <button className="bg-[#333] rounded text-white text-xs tracking-[0.3em] px-8 py-4 font-medium hover:bg-black transition uppercase">
-              DOWNLOAD MY CV
+             <a
+  href="/Siraj Mohammed CV.pdf"
+  download
+  
+>
+  Download CV
+</a>
             </button>
           </div>
 
