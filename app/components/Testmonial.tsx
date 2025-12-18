@@ -1,34 +1,34 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 const testimonials = [
   {
     id: 1,
-    name: 'LOUIS MORRISON',
-    title: 'REGAL THEME',
-    image: '/testmonial-sample.jpg', // Replace with your image path
+    name: "Mr. Amare Kebede",
+    title: "",
+    image: "/testmonial-sample.jpg", // Replace with your image path
     quote:
-      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
   },
   {
     id: 2,
-    name: 'SARAH JOHNSON',
-    title: 'CREATIVE STUDIO',
-    image: '/testmonial-sample.jpg',
+    name: "SARAH JOHNSON",
+    title: "CREATIVE STUDIO",
+    image: "/testmonial-sample.jpg",
     quote:
-      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?',
+      "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
   },
   {
     id: 3,
-    name: 'JAMES CARTER',
-    title: 'DEV CORP',
-    image: '/testmonial-sample.jpg',
+    name: "JAMES CARTER",
+    title: "DEV CORP",
+    image: "/testmonial-sample.jpg",
     quote:
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.',
+      "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function TestimonialSection() {
       setLoaded(true);
     },
     loop: true,
-    mode: 'free-snap',
+    mode: "free-snap",
     slides: {
       perView: 1,
       spacing: 24,
@@ -87,8 +87,12 @@ export default function TestimonialSection() {
 
               {/* Card with extra top padding to accommodate the avatar */}
               <div className="bg-[#f5f5f5] pt-16 pb-10 px-10 rounded-md shadow-md mt-12">
-                <h3 className="text-xl font-semibold text-[#333] uppercase">{testimonial.name}</h3>
-                <p className="text-sm text-gray-500 uppercase tracking-wide">{testimonial.title}</p>
+                <h3 className="text-xl font-semibold text-[#333] uppercase">
+                  {testimonial.name}
+                </h3>
+                <p className="text-sm text-gray-500 uppercase tracking-wide">
+                  {testimonial.title}
+                </p>
                 <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
                   {testimonial.quote}
                 </p>
@@ -105,7 +109,7 @@ export default function TestimonialSection() {
               key={idx}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
               className={`h-1.5 w-6 rounded-full transition-all duration-300 ${
-                currentSlide === idx ? 'bg-gray-800' : 'bg-gray-400'
+                currentSlide === idx ? "bg-gray-800" : "bg-gray-400"
               }`}
             />
           ))}

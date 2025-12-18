@@ -1,28 +1,49 @@
 @import "tailwindcss";
 @tailwind utilities;
- @keyframes strike-expand {
-    0% {
-      width: 0;
-      left: 50%;
-    }
-    100% {
-      width: 100%;
-      left: 0;
-    }
+@keyframes strike-expand {
+  0% {
+    width: 0;
+    left: 50%;
   }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
 
-  .animate-strike-expand {
-    animation: strike-expand 0.4s ease-out forwards;
-  }
+.animate-strike-expand {
+  animation: strike-expand 0.4s ease-out forwards;
+}
 
 @keyframes blink {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .animate-blink {
   animation: blink 1.5s infinite ease-in-out;
 }
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   height: 16px;
@@ -43,17 +64,14 @@ input[type="range"]::-moz-range-thumb {
   border: 2px solid #ccc;
 }
 
-
-
-html,
-
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: #f7f7f7;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
