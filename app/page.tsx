@@ -10,7 +10,6 @@ import Preloader from "./components/placeloader";
 import Projects from "./components/Projects";
 import ScrollProgress from "./components/ScrollProgress";
 import Services from "./components/Services";
-import Testmonial from "./components/Testmonial";
 
 export default function HomePage() {
   return (
